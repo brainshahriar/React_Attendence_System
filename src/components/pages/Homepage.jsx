@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Footerdekstop from '../common/Footerdekstop'
 import Navmenudekstop from '../common/Navmenudekstop'
 
 class Homepage extends Component {
@@ -6,6 +7,7 @@ class Homepage extends Component {
         return (
             <>
             <Navmenudekstop/>
+            <Footerdekstop/>
             </>
         )
     }
