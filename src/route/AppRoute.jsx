@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Profile from '../components/home/Profile'
+import Homepage from '../components/pages/Homepage'
 
 class AppRoute extends Component {
     render() {
@@ -8,7 +8,7 @@ class AppRoute extends Component {
             <>
 
                 <Switch>
-                    <Route exact path="/" component={Profile}/>
+                    <Route exact path="/" component={Homepage}/>
                 </Switch>
             
             </>

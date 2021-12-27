@@ -10,7 +10,10 @@
 @import "onboard.css";
 @import "productdetails.css";
 @import "cartlist.css";
-@import "typo.css"; */
+ */
+@import "Navmenu.css";
+@import "responsive.css";
+@import "typo.css";
 
 body{
     background-color:rgba(170, 117, 117, 0.103);
