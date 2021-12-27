@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700;800&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;1,400;1,700&family=Roboto:wght@300;400;700&display=swap");
+
+/* @import "slider.css";
+@import "button.css";
+@import "card.css";
+@import "footer.css";
+@import "Navmenu.css";
+@import "megamenu.css";
+@import "common.css";
+@import "onboard.css";
+@import "productdetails.css";
+@import "cartlist.css";
+@import "typo.css"; */
+
+body{
+    background-color:rgba(170, 117, 117, 0.103);
+}
