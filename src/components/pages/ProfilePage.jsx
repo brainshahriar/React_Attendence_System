@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
 import Footerdekstop from '../common/Footerdekstop'
 import Navmenudekstop from '../common/Navmenudekstop'
-import UserLogin from '../common/UserLogin'
-class UserLoginPage extends Component {
-    render() {
-        const setUser = this.props.setUser;
-        const user = this.props.user;
-        return (
+import Profile from '../common/Profile'
 
+class ProfilePage extends Component {
+    render() {
+        const User = this.props.user;
+        return (
             <>
             
             <div className='Desktop'>
                 <Navmenudekstop/>
                 </div>
-                <UserLogin setUser={setUser} user ={user}  />
+                <Profile user = {User} />
                 <div className='Desktop'>
                     <Footerdekstop/>
                 </div>
@@ -24,4 +23,4 @@ class UserLoginPage extends Component {
     }
 }
 
-export default UserLoginPage
+export default ProfilePage

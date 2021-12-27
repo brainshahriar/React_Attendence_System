@@ -21,6 +21,7 @@ class Navmenudekstop extends Component {
                  <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
                    <a className="btn"><i className="fa h4 fa-mobile-alt"></i></a>
                    <Link to="/login" className="h4 btn">LOGIN</Link>
+                   <Link to="/register" className="h4 btn">REGISTER</Link>
               </Col>
             
                      </Row>

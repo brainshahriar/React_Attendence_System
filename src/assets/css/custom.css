@@ -2,7 +2,7 @@
 
 /* @import "slider.css";
 @import "button.css";
-@import "card.css";
+
 @import "footer.css";
 @import "Navmenu.css";
 @import "megamenu.css";
@@ -16,6 +16,8 @@
 @import "typo.css";
 @import "common.css";
 @import "onboard.css";
+@import "button.css";
+@import "card.css";
 
 body{
     background-color:rgba(170, 117, 117, 0.103);
