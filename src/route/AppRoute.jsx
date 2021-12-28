@@ -17,7 +17,7 @@ class AppRoute extends Component {
    }
 
    componentDidMount(){
-    axios.post(AppUrl.UserData).then((response) => { 
+    axios.get(AppUrl.UserData).then((response) => { 
              this.setUser(response.data)
         }).catch(error=>{
 
