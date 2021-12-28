@@ -2,8 +2,9 @@
     width: 100% !important;
     text-decoration: none;
     border: none !important;
-    border-radius: 0% !important;
-    box-shadow: 0 0 4px 0 rgba(57, 78, 234, 0.1)
+    border-radius: 5% !important;
+    box-shadow: 0 0 30px 0 rgba(1, 2, 14, 0.1);
+    background-color:#FE9A2E;
 }
 .card:hover {
     border-radius: 0% !important;
@@ -40,7 +41,7 @@
     font-weight: 600;
     position: relative;
     display: inline-block;
-    margin: 0;
+    margin-top: 40px;
 }
 
 .section-title h2:before {
@@ -62,3 +63,25 @@
     content: "";
     background-color: #000;
 }
+.product-price-on-card {
+    width: 250px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .product-price-on-card:hover {
+    overflow: visible;
+  }
+  .product-name-on-card {
+    width: 250px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .product-name-on-card:hover {
+    overflow: visible;
+  }
