@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Container,Row,Col, Form,Button } from 'react-bootstrap'
 import Login from '../../assets/images/login.png'
 import { Link, Redirect } from 'react-router-dom'
-import AppUrl from '../../api/AppUrl'
+import AppURL from '../../api/AppUrl';
 import axios from 'axios'
 
 class UserLogin extends Component {
@@ -25,7 +25,7 @@ class UserLogin extends Component {
                password:this.state.password
           }
 
-          axios.post(AppUrl.UserLogin,data).then(response =>{ 
+          axios.post(AppURL.UserLogin,data).then(response =>{ 
             
                localStorage.setItem('token',response.data.token);
                this.setState({loggedIn:true})

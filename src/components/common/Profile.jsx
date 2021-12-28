@@ -11,15 +11,12 @@ class Profile extends Component {
                email = this.props.user.email;
           }
 
-
-
           return (
               <Fragment>
                    <h1> User Profile Page </h1>
-
                <ul className="list-group">
-<li className="list-group-item">Name :  {name} </li>
-<li className="list-group-item">Email :  {email} </li>
+     <li className="list-group-item">Name :  {name} </li>
+     <li className="list-group-item">Email :  {email} </li>
                </ul>
 
 

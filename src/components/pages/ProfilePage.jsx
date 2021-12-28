@@ -12,7 +12,7 @@ class ProfilePage extends Component {
             <div className='Desktop'>
                 <Navmenudekstop/>
                 </div>
-                <Profile user = {User} />
+                <Profile user = {User}/>
                 <div className='Desktop'>
                     <Footerdekstop/>
                 </div>

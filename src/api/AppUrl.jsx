@@ -1,8 +1,8 @@
 class AppUrl{
     static BaseUrl = "http://localhost:8000/api"
-    static UserLogin = this.BaseURL+"/login"
-    static UserData = this.BaseURL+"/user"
-    static UserRegister = this.BaseURL+"/register"
+    static UserLogin = this.BaseUrl+"/login"
+    static UserData = this.BaseUrl+"/user"
+    static UserRegister = this.BaseUrl+"/register"
     // static ContactDetails = this.BaseUrl+"/store-contact"
     // static Categoryall = this.BaseUrl+"/categoryall"
     // static ProductAll = this.BaseUrl+"/productall"
