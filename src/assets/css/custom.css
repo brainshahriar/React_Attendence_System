@@ -18,6 +18,7 @@
 @import "onboard.css";
 @import "button.css";
 @import "card.css";
+@import "profile.css";
 
 body{
     background-color:rgba(170, 117, 117, 0.103);

@@ -3,6 +3,7 @@ class AppUrl{
     static UserLogin = this.BaseUrl+"/login"
     static UserData = this.BaseUrl+"/user"
     static UserRegister = this.BaseUrl+"/register"
+    static Allemployee = this.BaseUrl+"/allemployee"
     // static ContactDetails = this.BaseUrl+"/store-contact"
     // static Categoryall = this.BaseUrl+"/categoryall"
     // static ProductAll = this.BaseUrl+"/productall"
