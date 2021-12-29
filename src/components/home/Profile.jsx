@@ -23,7 +23,7 @@ class Profile extends Component {
             return (
                 <Col key={i.toString()} className="p-1" xl={3} lg={3} md={3} sm={6} xs={6}>
                 <Card className="image-box card w-100">
-
+                
 
                 {
                     (ShowData.employee).map((Imagelist,i)=>{
