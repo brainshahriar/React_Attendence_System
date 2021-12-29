@@ -13,7 +13,6 @@ class Profile extends Component {
           this.state = { 
                time: new Date() ,
                reason:"",
-               present_date:""
 
           };
         }
@@ -38,7 +37,6 @@ class Profile extends Component {
           
           let id = this.props.user.id;
           let reason=this.state.reason;
-          let present_date=this.state.present_date;
           let sendBtn = document.getElementById('sendBtn');
           let contactForm = document.getElementById('contactForm');
 
@@ -46,7 +44,6 @@ class Profile extends Component {
                let MyFormData=new FormData();
                MyFormData.append("user_id",id)
                MyFormData.append("reason",reason)
-               MyFormData.append("present_date",present_date)
 
 
                axios.post(AppUrl.AttendenceSubmit,MyFormData)
@@ -70,7 +67,7 @@ class Profile extends Component {
      }
      render() { 
           const current = new Date();
-          const date =`${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+          const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
           let name;
           let email;
@@ -86,12 +83,12 @@ class Profile extends Component {
           return (
               <Fragment>
                    <Container>
-          <h1> User Profile Page </h1>
-          <ul className="list-group">
-          <li className="list-group-item">Name :  {name} </li>
-          <li className="list-group-item">Email :  {email} </li>
+                   <h1> User Profile Page </h1>
+               <ul className="list-group">
+     <li className="list-group-item">Name :  {name} </li>
+     <li className="list-group-item">Email :  {email} </li>
                </ul>
-          <div className="Clock">
+               <div className="Clock">
           <h1 id="time">{this.state.time.toLocaleTimeString()}</h1>
           <br />
           <h1>Current date is {date}</h1>
@@ -103,7 +100,6 @@ class Profile extends Component {
      <Form id="contactForm" className="onboardForm" onSubmit={this.onFormSubmit}>
 
           <input type="hidden" value={id} />
-          <input type="text" value={date} />
           <Form.Control onChange={this.messageOnChange} className="form-control m-2" as="textarea" rows={3} placeholder="Reason (Not Required)" />
           <Button id="sendBtn" type="submit" className="btn btn-block m-2 site-btn-login"> IN </Button>
      </Form>
