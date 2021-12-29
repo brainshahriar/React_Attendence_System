@@ -5,6 +5,7 @@ import Profile from '../home/Profile'
 
 class Homepage extends Component {
     render() {
+
         return (
             <>
             <Navmenudekstop/>
