@@ -34,9 +34,11 @@ class Profile extends Component {
 
 
         onFormSubmit = (e) =>{
-          
+          const current = new Date();
+          const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
           let id = this.props.user.id;
           let reason=this.state.reason;
+          let present_date=date;
           let sendBtn = document.getElementById('sendBtn');
           let contactForm = document.getElementById('contactForm');
 
@@ -44,6 +46,8 @@ class Profile extends Component {
                let MyFormData=new FormData();
                MyFormData.append("user_id",id)
                MyFormData.append("reason",reason)
+               MyFormData.append("present_date",present_date)
+
 
 
                axios.post(AppUrl.AttendenceSubmit,MyFormData)
@@ -55,27 +59,27 @@ class Profile extends Component {
                     }
                     else{
                      toast.error("error"); 
+                    //  toast.error("Please write your message");
                     sendBtn.innerHTML="IN";
                     }
                })
                .catch(function(error){
                     toast.error(error);
+                    toast.error("Already Attend Today!!");
                     sendBtn.innerHTML="IN";
                });
 
           e.preventDefault();
      }
      render() { 
+
           const current = new Date();
           const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-
           let name;
           let email;
-          let id;
           if(this.props.user){
                name = this.props.user.name;
                email = this.props.user.email;
-               id=this.props.user.id;
           }
           if(!localStorage.getItem('token')){
                return <Redirect to="/login" />
@@ -89,22 +93,19 @@ class Profile extends Component {
      <li className="list-group-item">Email :  {email} </li>
                </ul>
                <div className="Clock">
-          <h1 id="time">{this.state.time.toLocaleTimeString()}</h1>
+          <h1 id="time">Time : {this.state.time.toLocaleTimeString()}</h1>
           <br />
-          <h1>Current date is {date}</h1>
+          <h1>Date : {date}</h1>
         </div>
      <Row className="p-2">
             <Col className="shadow-sm bg-white mt-2" md={12} lg={12} sm={12} xs={12}>
                     <Row className="text-center">
              <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
      <Form id="contactForm" className="onboardForm" onSubmit={this.onFormSubmit}>
-
-          <input type="hidden" value={id} />
           <Form.Control onChange={this.messageOnChange} className="form-control m-2" as="textarea" rows={3} placeholder="Reason (Not Required)" />
           <Button id="sendBtn" type="submit" className="btn btn-block m-2 site-btn-login"> IN </Button>
      </Form>
-
-                         </Col>
+               </Col>
 
                     </Row>
 
