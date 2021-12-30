@@ -5,7 +5,12 @@ class AppUrl{
     static UserRegister = this.BaseUrl+"/register"
     static Allemployee = this.BaseUrl+"/allemployee"
     static AttendenceSubmit = this.BaseUrl+"/attendencestore"
-    static AttendenceDetails = this.BaseUrl+"/attendencedetails"
+    static AttendenceOut = this.BaseUrl+"/attendenceupdate"
+
+    static AttendenceDetails(id){
+        return this.BaseUrl+"/attendencedetails/"+id;
+    }
+
 
     // static ContactDetails = this.BaseUrl+"/store-contact"
     // static Categoryall = this.BaseUrl+"/categoryall"
