@@ -4,31 +4,36 @@ import axios from 'axios'
 import AppUrl from '../../api/AppUrl';
 
 class History extends Component {
-//     constructor({match}){
-//         super(); 
-//         this.state={
-//              id:match.params.id,
-//              AllData:[],
-//         }
-//    }
-//    componentDidMount(){
+    constructor({match}){
+        super();
+        this.state={
+            AllData:[]
+        }
+    }
+   componentDidMount(){
+    let id = this.props.user.id;
+    axios.get(AppUrl.AttendenceDetails(id)).then(response=>{
+        this.setState({AllData:response.data});
+    }).catch(error=>{
+    })
+}
 
-//     axios.get(AppUrl.AttendenceDetails(this.state.id)).then(response =>{
-
-//          this.setState({AllData:response.data});         
-
-//     }).catch(error=>{
-
-//     });
-// }
     render() {
-        // const data=this.state.AllData;
-        // const View=data.map((data,i)=>{
-        //     return( <div  key={i.toString()} >
-  
-        //         </div>
-        //     )
-        // });
+        const data=this.state.AllData;
+        const View=data.map((data,i)=>{
+            return(  
+            <tr key={i.toString()}>
+            <td>{data.id}</td>
+            <td>{data.present_date}</td>
+            <td>{data.present_time}</td>
+            <td>{data.out_date}</td>
+            <td>{data.out_time}</td>
+            <td>Thorntoasdasd asdas asdas asdas asdas asdas asdas n</td>
+            <td>@fat</td>
+            </tr>
+         
+            )
+        });
         return (
             <>
             <Container>
@@ -45,15 +50,7 @@ class History extends Component {
     </tr>
   </thead>
   <tbody>
-        <tr>
-        <td>1</td>
-        <td>Jacob</td>
-        <td>hh</td>
-        <td>@fat</td>
-        <td>Jacob</td>
-        <td>Thorntoasdasd asdas asdas asdas asdas asdas asdas n</td>
-        <td>@fat</td>
-        </tr>
+    {View}
   </tbody>
 </Table>
             </Container>

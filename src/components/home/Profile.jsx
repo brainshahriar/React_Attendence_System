@@ -37,16 +37,14 @@ class Profile extends Component {
                 }
                   
                 <Card.Body> 
-                <p className="product-name-on-card">Name :  {ShowData.id}</p>
+                <p className="product-name-on-card">Name :  {ShowData.name}</p>
          
 
                 {
                     (ShowData.employee).map((Imagelist,i)=>{
                         return <div>
                                    <p className="product-price-on-card">Designation : {Imagelist.designation}</p>
-                                    <Link to={"/history/"+Imagelist.id}>
-                         
-                                      <Button>See Details</Button></Link>
+                       
                                      </div>
                   
                         
