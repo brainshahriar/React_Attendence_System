@@ -95,7 +95,7 @@ class Profile extends Component {
 
 
 
-               axios.post(AppUrl.AttendenceOut,MyFormData)
+               axios.put(AppUrl.AttendenceOut,MyFormData)
                .then(function(response){
                     if(response.status===200 && response.data===1){
                          toast.success("Thankyou");
