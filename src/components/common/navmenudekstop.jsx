@@ -16,7 +16,6 @@ class Navmenudekstop extends Component {
                  <Link to="/" onClick={this.logout} className="h4 btn">LOGOUT</Link>
                   </div> 
              )
-
         }else{
              buttons = (
                   <div>

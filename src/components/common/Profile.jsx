@@ -161,9 +161,9 @@ class Profile extends Component {
                     </Row>
                          </Col>
                     </Row>
-                    <Link to={"/history/"+this.props.user.id}>
+                    {/* <Link to={"/history/"+this.props.user.id}>
                          
-                    <Button>My History</Button></Link>
+                    <Button>My History</Button></Link> */}
         </Container>
         <ToastContainer/>
               </Fragment>

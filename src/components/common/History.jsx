@@ -45,15 +45,15 @@ class History extends Component {
     </tr>
   </thead>
   <tbody>
-  <tr>
-                            <td>1</td>
-                            <td>Jacob</td>
-                            <td>hh</td>
-                            <td>@fat</td>
-                            <td>Jacob</td>
-                            <td>Thorntoasdasd asdas asdas asdas asdas asdas asdas n</td>
-                            <td>@fat</td>
-                        </tr>
+        <tr>
+        <td>1</td>
+        <td>Jacob</td>
+        <td>hh</td>
+        <td>@fat</td>
+        <td>Jacob</td>
+        <td>Thorntoasdasd asdas asdas asdas asdas asdas asdas n</td>
+        <td>@fat</td>
+        </tr>
   </tbody>
 </Table>
             </Container>

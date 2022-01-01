@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import {Container,Row,Col,Card, Button} from 'react-bootstrap'
 import axios from 'axios'
 import AppUrl from '../../api/AppUrl';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
     constructor(){
@@ -20,8 +21,11 @@ class Profile extends Component {
     render() {
         const ShowData=this.state.allData;
         const View=ShowData.map((ShowData,i)=>{
-            return (
+            return ( 
+
+   
                 <Col key={i.toString()} className="p-1" xl={3} lg={3} md={3} sm={6} xs={6}>
+                    
                 <Card className="image-box card w-100">
                 
 
@@ -33,20 +37,26 @@ class Profile extends Component {
                 }
                   
                 <Card.Body> 
-                <p className="product-name-on-card">Name :  {ShowData.name}</p>
+                <p className="product-name-on-card">Name :  {ShowData.id}</p>
+         
 
                 {
                     (ShowData.employee).map((Imagelist,i)=>{
-                        return  <p className="product-price-on-card">Designation : {Imagelist.designation}</p>
+                        return <div>
+                                   <p className="product-price-on-card">Designation : {Imagelist.designation}</p>
+                                    <Link to={"/history/"+Imagelist.id}>
+                         
+                                      <Button>See Details</Button></Link>
+                                     </div>
+                  
                         
                     })
                 }
-                <Button>See Details</Button>
-
-                     
+        
                 </Card.Body>
                 </Card>          
                 </Col>
+    
             )
         });
         return (
