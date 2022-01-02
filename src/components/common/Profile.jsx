@@ -81,30 +81,24 @@ class Profile extends Component {
      outFormSubmit = (e) =>{
           const current = new Date();
           const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-          let id = this.props.user.id;
-          let out_reason=this.state.out_reason;
-          let out_date=date;
+          let out_time=date;
           let outBtn = document.getElementById('outBtn');
-          let contactForm = document.getElementById('contactForm');
 
                outBtn.innerHTML="Outted...";   
                let MyFormData=new FormData();
-               MyFormData.append("user_id",id)
-               MyFormData.append("out_reason",out_reason)
-               MyFormData.append("out_date",out_date)
+               MyFormData.append("out_time",out_time)
 
 
-
-               axios.post(AppUrl.AttendenceOut,MyFormData)
+               let user_id = this.props.user.id;
+               axios.post(AppUrl.AttendenceOut(user_id),MyFormData)
                .then(function(response){
-                    if(response.status===200 && response.data===1){
+                    if(response.status===200){
                          toast.success("Thankyou");
                          outBtn.innerHTML="Out";
-                         contactForm.reset();
                     }
                     else{
                      toast.error("error"); 
-                    //  toast.error("Please write your message");
+                    // toast.error("Please write your message");
                     outBtn.innerHTML="Out";
                     }
                })
