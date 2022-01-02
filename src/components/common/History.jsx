@@ -23,10 +23,10 @@ class History extends Component {
         const View=data.map((data,i)=>{
             return(  
             <tr key={i.toString()}>
-            <td>{data.id}</td>
+            <td>{++i}</td>
             <td>{data.present_date}</td>
             <td>{data.present_time}</td>
-            <td>{data.out_date}</td>
+            <td>{data.out_time}</td>
             <td>{data.reason}</td>
             <td>{data.out_reason}</td>
             <td>Active</td>
