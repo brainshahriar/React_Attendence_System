@@ -28,8 +28,8 @@ class History extends Component {
             <td>{data.present_time}</td>
             <td>{data.out_date}</td>
             <td>{data.reason}</td>
-            <td>Thorntoasdasd asdas asdas asdas asdas asdas asdas n</td>
-            <td>@fat</td>
+            <td>{data.out_reason}</td>
+            <td>Active</td>
             </tr>
          
             )

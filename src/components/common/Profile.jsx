@@ -79,14 +79,12 @@ class Profile extends Component {
           e.preventDefault();
      }
      outFormSubmit = (e) =>{
-          const current = new Date();
-          const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-          let out_time=date;
+          let out_reason=this.state.out_reason;
           let outBtn = document.getElementById('outBtn');
 
                outBtn.innerHTML="Outted...";   
                let MyFormData=new FormData();
-               MyFormData.append("out_time",out_time)
+               MyFormData.append("out_reason",out_reason)
 
 
                let user_id = this.props.user.id;
