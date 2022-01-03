@@ -37,6 +37,8 @@ class History extends Component {
         return (
             <>
             <Container>
+                <br />
+                <br />
             <Table striped bordered hover>
   <thead>
     <tr>

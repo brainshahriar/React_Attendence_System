@@ -55,8 +55,6 @@ class Profile extends Component {
                MyFormData.append("reason",reason)
                MyFormData.append("present_date",present_date)
 
-
-
                axios.post(AppUrl.AttendenceSubmit,MyFormData)
                .then(function(response){
                     if(response.status===200 && response.data===1){

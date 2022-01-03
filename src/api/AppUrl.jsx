@@ -14,7 +14,6 @@ class AppUrl{
         return this.BaseUrl+"/attendenceupdate/"+id;
     }
 
-
     // static ContactDetails = this.BaseUrl+"/store-contact"
     // static Categoryall = this.BaseUrl+"/categoryall"
     // static ProductAll = this.BaseUrl+"/productall"
