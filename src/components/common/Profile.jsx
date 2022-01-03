@@ -38,6 +38,7 @@ class Profile extends Component {
         componentWillUnmount() {
           clearInterval(this.interval);
         }
+        
 
 
         onFormSubmit = (e) =>{
@@ -107,6 +108,7 @@ class Profile extends Component {
           e.preventDefault();
      }
      render() { 
+          
 
           const current = new Date();
           const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
@@ -139,7 +141,7 @@ class Profile extends Component {
              <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
      <Form id="contactForm" className="onboardForm" onSubmit={this.onFormSubmit}>
           <Form.Control onChange={this.messageOnChange} className="form-control m-2" as="textarea" rows={3} placeholder="Reason (Not Required)" />
-          <Button id="sendBtn" type="submit" className="btn btn-block m-2 site-btn-login"> IN </Button>
+          <Button  id="sendBtn" type="submit" className="btn btn-block m-2 site-btn-login"> IN </Button>
      </Form>
                </Col>
                <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
