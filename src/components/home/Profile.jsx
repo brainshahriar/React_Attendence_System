@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import {Container,Row,Col,Card, Button} from 'react-bootstrap'
 import axios from 'axios'
 import AppUrl from '../../api/AppUrl';
-import { Link } from 'react-router-dom';
 
 class Profile extends Component {
     constructor(){
@@ -61,7 +60,7 @@ class Profile extends Component {
             <Fragment>
             <Container className="text-center" fluid={true}>
    <div className="section-title text-center mb-55">
-       <h2>EMPLOYEES</h2>
+       <h2>OUR EMPLOYEES</h2>
    <p>Global Skills Development Agency</p>
    </div>
 
