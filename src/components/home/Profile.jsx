@@ -2,17 +2,22 @@ import React, { Component, Fragment } from 'react'
 import {Container,Row,Col,Card, Button} from 'react-bootstrap'
 import axios from 'axios'
 import AppUrl from '../../api/AppUrl';
+import Profileloading from '../placeholder/Profileloading';
+
 
 class Profile extends Component {
     constructor(){
         super();
         this.state={
-            allData:[]
+            allData:[],
+            isLoading:"",
+            mainDiv:"d-none"
         }
     }
     componentDidMount(){ 
         axios.get(AppUrl.Allemployee).then(response=>{
-            this.setState({allData:response.data});
+            this.setState({allData:response.data,isLoading:"d-none",
+            mainDiv:""});
         }).catch(error=>{
 
         })
@@ -58,6 +63,8 @@ class Profile extends Component {
         });
         return (
             <Fragment>
+                <Profileloading isLoading={this.state.isLoading} />
+                <div className={this.state.mainDiv}>
             <Container className="text-center" fluid={true}>
    <div className="section-title text-center mb-55">
        <h2>OUR EMPLOYEES</h2>
@@ -71,6 +78,7 @@ class Profile extends Component {
 
 </Row>
             </Container>
+            </div>
        </Fragment>
         )
     }

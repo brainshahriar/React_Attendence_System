@@ -8,17 +8,19 @@ class History extends Component {
     super();
     this.state = {
       AllData: [],
-      OutData:[]
+      OutData: [],
     };
   }
   componentDidMount() {
     let id = this.props.user.id;
-    axios.get(AppUrl.AttendenceDetails(id))
+    axios
+      .get(AppUrl.AttendenceDetails(id))
       .then((response) => {
         this.setState({ AllData: response.data });
       })
       .catch((error) => {});
-      axios.get(AppUrl.AttendenceDetails2(id))
+    axios
+      .get(AppUrl.AttendenceDetails2(id))
       .then((response) => {
         this.setState({ OutData: response.data });
       })
@@ -34,11 +36,10 @@ class History extends Component {
           <td>{data.present_date}</td>
           <td>{data.present_time}</td>
           <td>{data.reason}</td>
-          <td>On Time</td>
+          <td className="text-success"><strong style={{ fontWeight:"700" }}>{data.present_time}</strong></td>
         </tr>
       );
     });
-
 
     const data2 = this.state.OutData;
     const View2 = data2.map((data2, i) => {
@@ -48,7 +49,9 @@ class History extends Component {
           <td>{data2.out_date}</td>
           <td>{data2.out_time}</td>
           <td>{data2.out_reason}</td>
-          <td>On Time</td>
+          <td className="text-danger">
+              <strong style={{ fontWeight:"700" }}> {data2.out_time}</strong>
+             </td>
         </tr>
       );
     });
@@ -59,6 +62,8 @@ class History extends Component {
           <br />
           <div className="col-md-12 row clearfix">
             <div className="col-md-6">
+              <h4>In Status</h4>
+    
               <table className="table table-success table-striped">
                 <thead>
                   <tr>
@@ -73,6 +78,7 @@ class History extends Component {
               </table>
             </div>
             <div className="col-md-6">
+            <h4>Out Status</h4>
               <table className="table table-danger table-striped">
                 <thead>
                   <tr>
@@ -85,7 +91,6 @@ class History extends Component {
                 </thead>
                 <tbody>{View2}</tbody>
               </table>
-              
             </div>
           </div>
         </Container>
