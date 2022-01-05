@@ -101,7 +101,7 @@ class Profile extends Component {
     let last_name_and_date = this.state.last_name_and_date;
     let out_date = date;
     let outBtn = document.getElementById("outBtn");
-    let contactForm = document.getElementById("contactForm");
+    let contactForm2 = document.getElementById("contactForm2");
 
     outBtn.innerHTML = "Outted...";
     let MyFormData = new FormData();
@@ -115,7 +115,7 @@ class Profile extends Component {
         if (response.status === 200) {
           toast.success("Thankyou");
           outBtn.innerHTML = "Out";
-          contactForm.reset();
+            contactForm2.reset();
         } else {
           toast.error("error");
           // toast.error("Please write your message");
@@ -211,7 +211,7 @@ class Profile extends Component {
                   xs={12}
                 >
                   <Form
-                    id="contactForm"
+                    id="contactForm2"
                     className="onboardForm"
                     onSubmit={this.outFormSubmit}
                   >

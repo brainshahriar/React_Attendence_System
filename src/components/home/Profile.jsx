@@ -27,12 +27,10 @@ class Profile extends Component {
         const View=ShowData.map((ShowData,i)=>{
             return ( 
 
-   
                 <Col key={i.toString()} className="p-1" xl={3} lg={3} md={3} sm={6} xs={6}>
                     
                 <Card className="image-box card w-100">
-                
-
+            
                 {
                     (ShowData.employee).map((Imagelist,i)=>{
                         return  <img alt='' className="center w-75" src={Imagelist.image} />
@@ -66,10 +64,10 @@ class Profile extends Component {
                 <Profileloading isLoading={this.state.isLoading} />
                 <div className={this.state.mainDiv}>
             <Container className="text-center" fluid={true}>
-   <div className="section-title text-center mb-55">
-       <h2>OUR EMPLOYEES</h2>
-   <p>Global Skills Development Agency</p>
-   </div>
+            <div className="section-title text-center mb-55">
+                <h2>OUR EMPLOYEES</h2>
+            <p>Global Skills Development Agency</p>
+            </div>
 
 <Row>
 {View}

@@ -12,7 +12,7 @@ import Historypage from '../components/pages/Historypage'
 class AppRoute extends Component {
     constructor(){
         super();
-        this.state={ 
+        this.state={
              user:{}
         }
    }

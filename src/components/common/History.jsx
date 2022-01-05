@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Table } from "react-bootstrap";
 import axios from "axios";
 import AppUrl from "../../api/AppUrl";
+import Historyloading from "../placeholder/Historyloading";
 
 class History extends Component {
   constructor({ match }) {
@@ -9,6 +10,8 @@ class History extends Component {
     this.state = {
       AllData: [],
       OutData: [],
+      isLoading:"",
+      mainDiv:"d-none"
     };
   }
   componentDidMount() {
@@ -16,13 +19,15 @@ class History extends Component {
     axios
       .get(AppUrl.AttendenceDetails(id))
       .then((response) => {
-        this.setState({ AllData: response.data });
+        this.setState({ AllData: response.data,isLoading:"d-none",
+        mainDiv:""});
       })
       .catch((error) => {});
     axios
       .get(AppUrl.AttendenceDetails2(id))
       .then((response) => {
-        this.setState({ OutData: response.data });
+        this.setState({ OutData: response.data,isLoading:"d-none",
+        mainDiv:""});
       })
       .catch((error) => {});
   }
@@ -57,6 +62,8 @@ class History extends Component {
     });
     return (
       <>
+      <Historyloading isLoading={this.state.isLoading} />
+      <div className={this.state.mainDiv}>
         <Container>
           <br />
           <br />
@@ -94,6 +101,7 @@ class History extends Component {
             </div>
           </div>
         </Container>
+        </div>
       </>
     );
   }
