@@ -10,7 +10,7 @@ class Historypage extends Component {
             <>
             
             <div className='Desktop'>
-                <Navmenudekstop/>
+                <Navmenudekstop user = {User}/>
                 </div>
                     <History  user = {User} />
                 <div className='Desktop'>

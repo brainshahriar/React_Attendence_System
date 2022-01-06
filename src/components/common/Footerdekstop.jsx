@@ -12,8 +12,8 @@ export class Footerdekstop extends Component {
           <Row className="px-0 my-5">
                <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
                     <h5 className="footer-menu-title">OFFICE ADDRESS</h5>
-                    <p>1635 Franklin Street Montgomery, Near Sherwood Mall. AL 36104 <br></br>
-                    Email: Support@easylearningbd.com
+                    <p>Hayat Rose Park Level 5, House No 16 Main Road, Bashundhara Residential Area Dhaka 1229 Bangladesh<br></br>
+                    Email: info@globalskills.com.bd
                     </p>
                     <h5 className="footer-menu-title">SOCIAL LINK</h5>
                     <a href=""><i className="fab m-1 h4 fa-facebook"></i></a>

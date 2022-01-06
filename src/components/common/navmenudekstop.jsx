@@ -2,7 +2,27 @@ import React, { Component,Fragment } from 'react'
 import {Navbar,Container, Row, Col} from 'react-bootstrap';
 import Logo from '../../assets/images/logo.png';
 import {Link} from "react-router-dom";
+import axios from 'axios'
+import AppUrl from "../../api/AppUrl";
 class Navmenudekstop extends Component {
+     constructor(){
+          super();
+          this.state={
+               user:{}
+          }
+     }
+     componentDidMount(){
+      axios.get(AppUrl.UserData).then((response) => { 
+               this.setUser(response.data)
+          }).catch(error=>{
+  
+          });
+     }
+  
+  
+     setUser = (user) => {
+          this.setState({user:user})
+     }
     logout = () => {
         localStorage.clear();
    }
@@ -11,6 +31,9 @@ class Navmenudekstop extends Component {
         if(localStorage.getItem('token')){
              buttons = (
                   <div>
+      <Link to={"/history/" + this.state.user.id} className="h4 btn">
+          My History
+          </Link>
                 <a className="btn"><i className="fa h4 fa-user-alt"></i></a>
                  <Link to="/profile" className="h4 btn">PROFILE</Link>
                  <Link to="/" onClick={this.logout} className="h4 btn">LOGOUT</Link>

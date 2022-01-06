@@ -32,7 +32,7 @@ class AppRoute extends Component {
     render() {
         return (
             <>
-            <Navmenudekstop ser={this.state.user} setUser={this.setUser} />
+            <Navmenudekstop user={this.state.user} setUser={this.setUser} />
                 <Switch>
                     <Route exact path="/" component={Homepage}/>
                     <Route exact path="/login" render={(props) => <UserLoginPage user={this.state.user} setUser={this.setUser}  {...props} key={Date.now()} /> } />
