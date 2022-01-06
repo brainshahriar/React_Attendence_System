@@ -16,8 +16,20 @@ class Profile extends Component {
       out_reason: "",
       first_name_and_date: "",
       last_name_and_date: "",
+      designation:'',
+      image:''
     };
   }
+ imageOnChange = (e) => {
+    let image = e.target.value;
+    //     alert(reason);
+    this.setState({ image: image });
+  };
+designationOnChange = (e) => {
+    let designation = e.target.value;
+    //     alert(reason);
+    this.setState({ designation: designation });
+  };
   first_name_and_dateOnChange = (e) => {
     let first_name_and_date = e.target.value;
     //     alert(reason);
@@ -47,6 +59,32 @@ class Profile extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+  imageForm = (e) => {
+    let id = this.props.user.id;
+    let image = this.state.image;
+    let designation = this.state.designation;
+    let MyFormData = new FormData();
+    MyFormData.append("user_id", id);
+    MyFormData.append("image", image);
+    MyFormData.append("designation", designation);
+
+    axios
+      .post(AppUrl.EmployeeStore, MyFormData)
+      .then(function (response) {
+        if (response.status === 200) {
+          toast.success("Upload Successfully");
+        } else {
+          toast.error("error");
+          // toast.error("Please write your message");
+        }
+      })
+      .catch(function (error) {
+        toast.error(error);
+        toast.error("Something Wrong!!");
+      });
+
+    e.preventDefault();
+  };
 
   onFormSubmit = (e) => {
     const current = new Date();
@@ -70,7 +108,8 @@ class Profile extends Component {
       MyFormData.append("present_date", present_date);
       MyFormData.append("first_name_and_date", first_name_and_date);
 
-      axios.post(AppUrl.AttendenceSubmit, MyFormData)
+      axios
+        .post(AppUrl.AttendenceSubmit, MyFormData)
         .then(function (response) {
           if (response.status === 200 && response.data === 1) {
             toast.success("Attended");
@@ -110,12 +149,13 @@ class Profile extends Component {
     MyFormData.append("out_date", out_date);
     MyFormData.append("last_name_and_date", last_name_and_date);
 
-    axios.post(AppUrl.AttendenceOut, MyFormData)
+    axios
+      .post(AppUrl.AttendenceOut, MyFormData)
       .then(function (response) {
         if (response.status === 200) {
           toast.success("Thankyou");
           outBtn.innerHTML = "Out";
-            contactForm2.reset();
+          contactForm2.reset();
         } else {
           toast.error("error");
           // toast.error("Please write your message");
@@ -152,6 +192,19 @@ class Profile extends Component {
             <li className="list-group-item">Name : {name} </li>
             <li className="list-group-item">Email : {email} </li>
           </ul>
+          <Form onSubmit={this.imageForm}>
+          <div className="m-3">
+          <Form.Control
+                      onChange={this.designationOnChange}
+                      className="form-control"
+                      as="textarea"
+                      rows={1}
+                      placeholder="Set Your Designation" required
+                    />
+      <input type="file"  onChange={this.imageOnChange}    />
+      <button type="submit" className="btn btn-outline-primary">Upload</button>
+    </div>
+    </Form>
 
           <div className="Clock">
             <h1 id="time">Time : {this.state.time.toLocaleTimeString()}</h1>

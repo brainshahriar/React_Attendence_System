@@ -6,6 +6,7 @@ class AppUrl{
     static Allemployee = this.BaseUrl+"/allemployee"
     static AttendenceSubmit = this.BaseUrl+"/attendencestore"
     static AttendenceOut = this.BaseUrl+"/attendenceupdate"
+    static EmployeeStore = this.BaseUrl+"/employeestore"
 
     static AttendenceDetails(id){
         return this.BaseUrl+"/attendencedetails/"+id;

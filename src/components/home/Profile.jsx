@@ -33,7 +33,7 @@ class Profile extends Component {
             
                 {
                     (ShowData.employee).map((Imagelist,i)=>{
-                        return  <img alt='' className="center w-75" src={Imagelist.image} />
+                        return  <img alt='' className="center w-75" src={"http://localhost:8000/" + Imagelist.image} />
 
                     })
                 }
