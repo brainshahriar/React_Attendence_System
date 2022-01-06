@@ -17,13 +17,11 @@ class Profile extends Component {
       first_name_and_date: "",
       last_name_and_date: "",
       designation:'',
-      image:''
+      image:null
     };
   }
  imageOnChange = (e) => {
-    let image = e.target.value;
-    //     alert(reason);
-    this.setState({ image: image });
+   this.setState({ image: e.target.files[0] });
   };
 designationOnChange = (e) => {
     let designation = e.target.value;
@@ -64,6 +62,11 @@ designationOnChange = (e) => {
     let image = this.state.image;
     let designation = this.state.designation;
     let MyFormData = new FormData();
+
+    let sendBtn = document.getElementById("sentbtn");
+    let designationForm = document.getElementById("designationForm");
+
+    sendBtn.innerHTML = "Uploaded...";
     MyFormData.append("user_id", id);
     MyFormData.append("image", image);
     MyFormData.append("designation", designation);
@@ -73,14 +76,18 @@ designationOnChange = (e) => {
       .then(function (response) {
         if (response.status === 200) {
           toast.success("Upload Successfully");
+          sendBtn.innerHTML = "Update";
+          designationForm.reset();
         } else {
           toast.error("error");
+          sendBtn.innerHTML = "Update";
           // toast.error("Please write your message");
         }
       })
       .catch(function (error) {
         toast.error(error);
-        toast.error("Something Wrong!!");
+        toast.error("Choose Image File!!");
+        sendBtn.innerHTML = "Update";
       });
 
     e.preventDefault();
@@ -192,7 +199,7 @@ designationOnChange = (e) => {
             <li className="list-group-item">Name : {name} </li>
             <li className="list-group-item">Email : {email} </li>
           </ul>
-          <Form onSubmit={this.imageForm}>
+          <Form onSubmit={this.imageForm} id="designationForm" >
           <div className="m-3">
           <Form.Control
                       onChange={this.designationOnChange}
@@ -202,7 +209,7 @@ designationOnChange = (e) => {
                       placeholder="Set Your Designation" required
                     />
       <input type="file"  onChange={this.imageOnChange}    />
-      <button type="submit" className="btn btn-outline-primary">Upload</button>
+      <button id="sentbtn" type="submit" className="btn btn-outline-primary">Update</button>
     </div>
     </Form>
 
