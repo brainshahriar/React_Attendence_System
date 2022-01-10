@@ -148,33 +148,37 @@ designationOnChange = (e) => {
     let out_date = date;
     let outBtn = document.getElementById("outBtn");
     let contactForm2 = document.getElementById("contactForm2");
-
-    outBtn.innerHTML = "Outted...";
-    let MyFormData = new FormData();
-    MyFormData.append("user_id", id);
-    MyFormData.append("out_reason", out_reason);
-    MyFormData.append("out_date", out_date);
-    MyFormData.append("last_name_and_date", last_name_and_date);
-
-    axios
-      .post(AppUrl.AttendenceOut, MyFormData)
-      .then(function (response) {
-        if (response.status === 200) {
-          toast.success("Thankyou");
+    if (last_name_and_date.length === 0) {
+      toast.error("Please write your Last name and day number");
+    }
+    else{
+      outBtn.innerHTML = "Outted...";
+      let MyFormData = new FormData();
+      MyFormData.append("user_id", id);
+      MyFormData.append("out_reason", out_reason);
+      MyFormData.append("out_date", out_date);
+      MyFormData.append("last_name_and_date", last_name_and_date);
+  
+      axios
+        .post(AppUrl.AttendenceOut, MyFormData)
+        .then(function (response) {
+          if (response.status === 200) {
+            toast.success("Thankyou");
+            outBtn.innerHTML = "Out";
+            contactForm2.reset();
+          } else {
+            toast.error("error");
+            // toast.error("Please write your message");
+            outBtn.innerHTML = "Out";
+          }
+        })
+        .catch(function (error) {
+          toast.error(error);
+          toast.error("Already Out Today!!");
           outBtn.innerHTML = "Out";
-          contactForm2.reset();
-        } else {
-          toast.error("error");
-          // toast.error("Please write your message");
-          outBtn.innerHTML = "Out";
-        }
-      })
-      .catch(function (error) {
-        toast.error(error);
-        toast.error("Already Out Today!!");
-        outBtn.innerHTML = "Out";
-      });
-
+        });
+    }
+    
     e.preventDefault();
   };
   render() {
@@ -206,7 +210,7 @@ designationOnChange = (e) => {
                       className="form-control"
                       as="textarea"
                       rows={1}
-                      placeholder="Set Your Designation" required
+                      placeholder="Update Your Designation" required
                     />
       <input type="file"  onChange={this.imageOnChange}    />
       <button id="sentbtn" type="submit" className="btn btn-outline-primary">Update</button>
