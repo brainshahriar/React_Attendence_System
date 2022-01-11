@@ -31,27 +31,16 @@ class Profile extends Component {
                     
                 <Card className="image-box card w-100">
             
-                {
-                    (ShowData.employee).map((Imagelist,i)=>{
-                        return  <img alt='' className="center w-75" src={"http://localhost:8000/" + Imagelist.image} />
+                 <img alt='' className="center w-75" src={"http://localhost:8000/" + ShowData.image} />
 
-                    })
-                }
-                  
+    
                 <Card.Body> 
                 <p className="product-name-on-card">Name :  {ShowData.name}</p>
          
 
-                {
-                    (ShowData.employee).map((Imagelist,i)=>{
-                        return <div>
-                                   <p className="product-price-on-card">Designation : {Imagelist.designation}</p>
-                       
-                                     </div>
-                  
-                        
-                    })
-                }
+    
+                     <p className="product-price-on-card">Designation : {ShowData.designation}</p>
+
         
                 </Card.Body>
                 </Card>          

@@ -70,7 +70,6 @@ class History extends Component {
           <div className="col-md-12 row clearfix">
             <div className="col-md-6">
               <h4>In Status</h4>
-    
               <table className="table table-success table-striped">
                 <thead>
                   <tr>
