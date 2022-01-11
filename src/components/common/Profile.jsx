@@ -14,8 +14,6 @@ class Profile extends Component {
       time: new Date(),
       reason: "",
       out_reason: "",
-      first_name_and_date: "",
-      last_name_and_date: "",
       designation:'',
       image:null
     };
@@ -28,16 +26,7 @@ designationOnChange = (e) => {
     //     alert(reason);
     this.setState({ designation: designation });
   };
-  first_name_and_dateOnChange = (e) => {
-    let first_name_and_date = e.target.value;
-    //     alert(reason);
-    this.setState({ first_name_and_date: first_name_and_date });
-  };
-  last_name_and_dateOnChange = (e) => {
-    let last_name_and_date = e.target.value;
-    //     alert(reason);
-    this.setState({ last_name_and_date: last_name_and_date });
-  };
+
   messageOnChange = (e) => {
     let reason = e.target.value;
     //     alert(reason);
@@ -100,7 +89,7 @@ designationOnChange = (e) => {
     }/${current.getFullYear()}`;
     let id = this.props.user.id;
     let reason = this.state.reason;
-    let first_name_and_date = this.state.first_name_and_date;
+    let first_name_and_date = [this.props.user.name,date];
     let present_date = date;
     let sendBtn = document.getElementById("sendBtn");
     let contactForm = document.getElementById("contactForm");
@@ -144,7 +133,7 @@ designationOnChange = (e) => {
     }/${current.getFullYear()}`;
     let id = this.props.user.id;
     let out_reason = this.state.out_reason;
-    let last_name_and_date = this.state.last_name_and_date;
+    let last_name_and_date = [this.props.user.id,date];
     let out_date = date;
     let outBtn = document.getElementById("outBtn");
     let contactForm2 = document.getElementById("contactForm2");
@@ -250,13 +239,6 @@ designationOnChange = (e) => {
                       rows={3}
                       placeholder="Reason (Not Required)"
                     />
-                    <Form.Control
-                      onChange={this.first_name_and_dateOnChange} value={[this.props.user.name,date ]}
-                      className="form-control m-2"
-                      as="textarea"
-                      rows={1}
-                     
-                    />
                     <Button
                       id="sendBtn"
                       type="submit"
@@ -285,13 +267,6 @@ designationOnChange = (e) => {
                       as="textarea"
                       rows={3}
                       placeholder="Reason (Not Required)"
-                    />
-                    <Form.Control
-                      onChange={this.last_name_and_dateOnChange}
-                      className="form-control m-2"
-                      as="textarea"
-                      rows={1}
-                      placeholder="Enter Your Last Name and Todays Day Like [akter 3] (Required)"
                     />
                     <Button
                       id="outBtn"
