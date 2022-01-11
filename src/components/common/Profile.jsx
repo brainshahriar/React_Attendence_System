@@ -251,11 +251,11 @@ designationOnChange = (e) => {
                       placeholder="Reason (Not Required)"
                     />
                     <Form.Control
-                      onChange={this.first_name_and_dateOnChange}
+                      onChange={this.first_name_and_dateOnChange} value={[this.props.user.name,date ]}
                       className="form-control m-2"
                       as="textarea"
                       rows={1}
-                      placeholder="Enter Your First Name and Todays Day Like [sumaia 3] (Required)"
+                     
                     />
                     <Button
                       id="sendBtn"
