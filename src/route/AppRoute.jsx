@@ -8,6 +8,7 @@ import AppUrl from '../api/AppUrl'
 import axios from 'axios' 
 import Navmenudekstop from '../components/common/Navmenudekstop'
 import Historypage from '../components/pages/Historypage'
+import Leave from '../components/home/Leave'
 
 class AppRoute extends Component {
     constructor(){
@@ -39,6 +40,7 @@ class AppRoute extends Component {
                     <Route exact path="/register" render={(props) => <RegisterPage user={this.state.user} setUser={this.setUser} {...props} key={Date.now()} /> } />
                     <Route exact path="/profile" render={(props) => <ProfilePage user={this.state.user} setUser={this.setUser}  {...props} key={Date.now()} /> } />
                     <Route exact path="/history/:id" render={(props) => <Historypage user={this.state.user} setUser={this.setUser}  {...props} key={Date.now()} /> } />
+                    <Route exact path="/leave" render={(props) => <Leave user={this.state.user} setUser={this.setUser}  {...props} key={Date.now()} /> } />
                 </Switch>
             
             </>

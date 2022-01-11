@@ -31,6 +31,9 @@ class Navmenudekstop extends Component {
         if(localStorage.getItem('token')){
              buttons = (
                   <div>
+      <Link to="/leave" className="h4 btn">
+          Request for Leave
+          </Link>
       <Link to={"/history/" + this.state.user.id} className="h4 btn">
           My History
           </Link>

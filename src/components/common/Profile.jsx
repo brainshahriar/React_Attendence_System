@@ -67,7 +67,7 @@ designationOnChange = (e) => {
     let designationForm = document.getElementById("designationForm");
 
     sendBtn.innerHTML = "Uploaded...";
-    MyFormData.append("user_id", id);
+    MyFormData.append("id", id);
     MyFormData.append("image", image);
     MyFormData.append("designation", designation);
 
