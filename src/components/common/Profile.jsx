@@ -187,13 +187,18 @@ designationOnChange = (e) => {
     return (
       <Fragment>
         <Container>
-          <h1> User Profile Page </h1>
+          <h1 style={{ textAlign:"center" }}> Welcome <strong className="text-success">{name}</strong> !! </h1>
           <ul className="list-group">
             <li className="list-group-item">Name : {name} </li>
             <li className="list-group-item">Email : {email} </li>
           </ul>
+
+
+          <div className="col-md-12 row">
+    <div className="col-md-6">
+          <div className="m-3" style={{ width: '300px' }}>
           <Form onSubmit={this.imageForm} id="designationForm" >
-          <div className="m-3">
+    
           <Form.Control
                       onChange={this.designationOnChange}
                       className="form-control"
@@ -201,15 +206,21 @@ designationOnChange = (e) => {
                       rows={1}
                       placeholder="Update Your Designation" required
                     />
-      <input type="file"  onChange={this.imageOnChange}    />
-      <button id="sentbtn" type="submit" className="btn btn-outline-primary">Update</button>
-    </div>
+       <label className="mt-2" htmlFor=""><strong style={{ fontWeight:"bold",color:"gray" }}>Update Your Profile Photo <i class="fas fa-arrow-down"></i></strong></label>
+      <input className="mt-1" type="file"  onChange={this.imageOnChange}    />
+      <button id="sentbtn" type="submit" className="btn btn-primary btn-sm mt-2">Update</button>
+  
     </Form>
-
+    </div>
+    </div>
+    
+    <div className="col-md-6">
           <div className="Clock">
             <h1 id="time">Time : {this.state.time.toLocaleTimeString()}</h1>
             <br />
             <h1>Date : {date}</h1>
+          </div>
+          </div>
           </div>
           <Row className="p-2">
             <Col
