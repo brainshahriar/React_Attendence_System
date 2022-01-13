@@ -31,7 +31,7 @@ class Profile extends Component {
                     
                 <Card className="image-box card w-100">
             
-                 <img alt='' className="center w-75" src={"http://localhost:8000/" + ShowData.image} />
+                 <img alt='' className="center w-75" src={"https://www.emsadmin.globalskills.com.bd/" + ShowData.image} />
 
     
                 <Card.Body> 
