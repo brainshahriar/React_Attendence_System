@@ -48,7 +48,6 @@ class Navmenudekstop extends Component {
 
                 <a className="btn"><i className="fa h4 fa-mobile-alt"></i></a>
                  <Link to="/login" className="h4 btn">LOGIN</Link>
-                 <Link to="/register" className="h4 btn">REGISTER</Link>
 
                   </div> 
              )

@@ -3,6 +3,7 @@ import { Container,Row,Col, Form,Button } from 'react-bootstrap'
 import Login from '../../assets/images/login.png'
 import { Link, Redirect } from 'react-router-dom'
 import AppURL from '../../api/AppUrl';
+import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios'
 
 class UserLogin extends Component {
@@ -91,6 +92,7 @@ class UserLogin extends Component {
                     </Col>
                </Row>
           </Container>
+          <ToastContainer />
      </Fragment>
           )
      }
