@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { Container, Form ,Button } from 'react-bootstrap'
+import { Redirect } from 'react-router-dom';
 import Footerdekstop from '../common/Footerdekstop'
 
 class Leave extends Component {
     render() {
+        if (!localStorage.getItem("token")) {
+            return <Redirect to="/login" />;
+          }
         return (
             <>
             <Container>

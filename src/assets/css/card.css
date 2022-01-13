@@ -65,7 +65,7 @@
 }
 .product-price-on-card {
     width: 250px;
-    text-align: center;
+    text-align: justify;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -76,7 +76,7 @@
   }
   .product-name-on-card {
     width: 250px;
-    text-align: center;
+    text-align: justify;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

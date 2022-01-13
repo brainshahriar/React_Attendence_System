@@ -4,6 +4,7 @@ import { Container, Button, Row, Col, Form } from "react-bootstrap";
 import {Redirect} from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from 'react-router-dom'
 import axios from "axios";
 import AppUrl from "../../api/AppUrl";
 
@@ -292,6 +293,9 @@ designationOnChange = (e) => {
               </Row>
             </Col>
           </Row>
+          <Link to="/leave" className="h4 btn">
+         <button className="btn btn-success"> Request for Leave </button>
+          </Link>
         </Container>
         <ToastContainer />
       </Fragment>

@@ -18,8 +18,6 @@ class Navmenudekstop extends Component {
   
           });
      }
-  
-  
      setUser = (user) => {
           this.setState({user:user})
      }
@@ -31,9 +29,6 @@ class Navmenudekstop extends Component {
         if(localStorage.getItem('token')){
              buttons = (
                   <div>
-      <Link to="/leave" className="h4 btn">
-          Request for Leave
-          </Link>
       <Link to={"/history/" + this.state.user.id} className="h4 btn">
           My History
           </Link>
@@ -45,7 +40,6 @@ class Navmenudekstop extends Component {
         }else{
              buttons = (
                   <div>
-
                 <a className="btn"><i className="fa h4 fa-mobile-alt"></i></a>
                  <Link to="/login" className="h4 btn">LOGIN</Link>
 

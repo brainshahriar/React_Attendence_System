@@ -32,7 +32,7 @@ class UserLogin extends Component {
                this.setState({loggedIn:true})
                this.props.setUser(response.data.user);
           }).catch(error=>{
-
+               toast.error("Wrong Credentials !!");
           }); 
 
      }
@@ -83,11 +83,6 @@ class UserLogin extends Component {
                          <img alt='' className="onboardBanner" src={Login} />
                     </Col>
                </Row>
-
-
-
-
-
 
                     </Col>
                </Row>

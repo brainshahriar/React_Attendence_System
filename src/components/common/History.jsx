@@ -3,6 +3,7 @@ import { Container, Table } from "react-bootstrap";
 import axios from "axios";
 import AppUrl from "../../api/AppUrl";
 import Historyloading from "../placeholder/Historyloading";
+import { Redirect } from "react-router-dom";
 
 class History extends Component {
   constructor({ match }) {
@@ -33,6 +34,9 @@ class History extends Component {
   }
 
   render() {
+    if (!localStorage.getItem("token")) {
+      return <Redirect to="/login" />;
+    }
     const data = this.state.AllData;
     const View = data.map((data, i) => {
       return (
