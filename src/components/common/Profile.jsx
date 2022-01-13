@@ -172,6 +172,9 @@ designationOnChange = (e) => {
     e.preventDefault();
   };
   render() {
+    if (!localStorage.getItem("token")) {
+      return <Redirect to="/login" />;
+    }
     const current = new Date();
     const date = `${current.getDate()}/${
       current.getMonth() + 1
