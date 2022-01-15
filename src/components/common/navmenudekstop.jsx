@@ -47,11 +47,6 @@ class Navmenudekstop extends Component {
              )
 
         }
-
-
-
-
-
         return (
             <Fragment>
             <div className="TopSectionDown">

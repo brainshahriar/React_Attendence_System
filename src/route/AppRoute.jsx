@@ -24,8 +24,6 @@ class AppRoute extends Component {
 
         });
    }
-
-
    setUser = (user) => {
         this.setState({user:user})
    }

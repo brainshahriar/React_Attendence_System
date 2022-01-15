@@ -1,5 +1,5 @@
 class AppUrl{
-    static BaseUrl = "http://localhost:8000/api"
+    static BaseUrl = "https://www.emsadmin.globalskills.com.bd/api"
     static UserLogin = this.BaseUrl+"/login"
     static UserData = this.BaseUrl+"/user"
     static UserRegister = this.BaseUrl+"/register"
