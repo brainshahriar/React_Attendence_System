@@ -8,7 +8,7 @@ class Leavepage extends Component {
 
         return (
             <>
-            <Navmenudekstop/>
+            <Navmenudekstop/> 
             <Leave/>
             <div className='Desktop'>
             <Footerdekstop/>
